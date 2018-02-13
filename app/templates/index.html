@@ -1,0 +1,107 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<h1>One minute pitch</h1>
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Handlee');
+     h2{            display: block;
+          font-family: 'Handlee', cursive;
+            color: #595a6a;
+            font-size: 4.2em;
+            margin-bottom: 5px;
+            font-weight: normal;
+            text-align: center;
+          }
+          ul {
+          font-family: 'Handlee', cursive;
+          }
+          body{
+              background-color: RGB(32, 178, 170)
+          }
+    </style>
+
+    <title> {{ title }} </title>
+
+    <div >
+        <h2 class="post-create">
+            <a href="/post/new">
+                Create a blog post
+
+            </a>
+        </h2>
+    </div>
+  </hr>
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                  <img src="./static/images/brigitte-tohm-155638.jpg"  height="500px" width="500px"alt="">
+              </div>
+          <div class="col-md-4">
+                <img src="./static/images/moss-334062.jpg"  height="500px" width="500px"alt="">
+          </div>
+          <div class="col-md-4">
+            <img src="./static/images/EnF7DhHROS8OMEp2pCkx_Dufer-food-overhead-hig-res.jpg"  height="500px" width="500px"alt="">
+          </div>
+      </div>
+      </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12 col-lg-12">
+                <h2 class="pitch-header">
+                    List of blog posts
+                </h2>
+            </div>
+
+
+
+        </div>
+      </div>
+        <hr>
+
+    <p>  {{ macro.displayPostList(posts) }}</p>
+      <div class="container">
+              <div class="row">
+                  <div class="col-sm-3">
+                      <h2> COMMENTS</h2>
+                      {{macro.displayCommentList(comments)}}
+          </div>
+  </div>
+</div>
+<div class="container">
+  <h2>Follow me on social media</h2>
+<table border="0" width="100%" cellspacing="2" cellpadding="10">
+<tbody>
+<tr>
+<td valign="top" width="25%">
+<p style="text-align: center;"><a class="asset-img-link" style="display: inline;" href="http://facebook.com/muotijune"  target="_blank"><img class="asset  asset-image at-xid-6a0115705a75a1970b01b7c7336ad4970b img-responsive" title="1-Facebook" src="https://www.facebook.com/images/fb_icon_325x325.png" height="200px" width="200px"alt="1-printshop" border="0" /></a></p>
+<h3 style="text-align: center;"><a href="http://facebook.com/muotijune" target="_blank">Facebook</a></h3>
+</td>
+<td valign="top" width="25%">
+<p style="text-align: center;"><a class="asset-img-link" style="display: inline;" href="http://instagram.com/muotijune" target="_blank"><img class="asset  asset-image at-xid-6a0115705a75a1970b01b7c7336adf970b img-responsive" title="2-instagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/240px-Instagram_icon.png"
+  height="200px" width="200px" alt="2-instagram" border="0" /></a></p>
+<h3 style="text-align: center;"><a href="http://instagram.com/muotijune" target="_blank">Instagram</a></h3>
+</td>
+<td valign="top" width="25%">
+<h3 style="text-align: center;"><a class="asset-img-link" style="display: inline;" href="https://www.twitter.com/muotijune/" target="_blank"><img class="asset  asset-image at-xid-6a0115705a75a1970b01b7c7336ae5970b img-responsive" title="3-twitter" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4X0csvzFf8Bo8nRKYQwDtzRFEEWOHHVeQBXKWt5XtpQWpbdsp"
+  height="200px" width="200px" alt="3-pinterest" border="0" /></a></h3>
+<h3 style="text-align: center;"><a href="https://www.twitter.com/muotijune/" target="_blank">Twitter</a></h3>
+</td>
+<td valign="top" width="25%">
+<h3 style="text-align: center;">ENTER YOUR EMAIL</h3>
+<div style="text-align: center;"><a class="asset-img-link" style="display: inline;" href="http://feedburner.google.com/fb/a/mailverify?uri=typepad/XNog&amp;loc=en_US" target="_self"><img class="asset  asset-image at-xid-6a0115705a75a1970b01bb07d716cd970d img-responsive" title="4-email" src="http://www.notetoselfblog.com/.a/6a0115705a75a1970b01bb07d716cd970d-800wi" alt="4-email" border="0" /></a></div>
+<form style="border: 0px solid #ccc; padding: 3px; text-align: center;" action="http://feedburner.google.com/fb/a/mailverify" method="post"></form><form style="border: 0px solid #ccc; padding: 3px; text-align: center;" action="http://feedburner.google.com/fb/a/mailverify" method="post"><input style="width: 150px;" name="email" type="text" /> <input type="submit" value="Subscribe" /></form></td>
+</tr>
+</tbody>
+
+</div>
+
+
+
+{% endblock %}
